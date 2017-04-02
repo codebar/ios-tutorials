@@ -16,11 +16,11 @@ Download and install Xcode from the App Store. This may take a while — its
 
 1. Open Xcode and click **Create a new Xcode project**.
 
-  ![step1](./resources/step1.png)
+  ![step1](./assets/step1.png)
 
 2. Select Single View Application from the **iOS > Application list**, and click **Next**
 
-  ![step2](./resources/step2.png)
+  ![step2](./assets/step2.png)
 
 3. Fill in the project details:
 
@@ -35,7 +35,7 @@ Download and install Xcode from the App Store. This may take a while — its
 
   Click Next
 
-  ![step3](./resources/step3.png)
+  ![step3](./assets/step3.png)
 
 4. Select a sensible place to save your project, then hit **Create**.
 
@@ -47,11 +47,11 @@ Download and install Xcode from the App Store. This may take a while — its
 
   > A storyboard is a visual representation of the user interface of an iOS application. It's one of the ways we can create our user interface (the visual bit of an app).
 
-  ![step4](./resources/step4.gif)
+  ![step4](./assets/step4.gif)
 
 2. Now, open the **Utility Area**, and go to the **Object Library**. In the search box, find a button, and drag it to the bottom of the view shown in the storyboard.
 
-  ![step5](./resources/step5.gif)
+  ![step5](./assets/step5.gif)
 
 3. Run you app on the iPhone 7 Plus Simulator. See your button, there in all it's glory at the bottom of the screen. Go ahead - press it!
 
@@ -69,7 +69,7 @@ Download and install Xcode from the App Store. This may take a while — its
 
 5.  Open the `ViewController.swift` file in the **Assistant Editor**. If it's not automatically there when you open the **Assistant Editor**, select it from the automatic or manual routes in the file navigator.
 
-  ![step6](./resources/step6.gif)
+  ![step6](./assets/step6.gif)
 
 6. Let's take a quick look at the code in `ViewController.swift`
 
@@ -100,7 +100,7 @@ Download and install Xcode from the App Store. This may take a while — its
 
   Hit **Connect**
 
-  ![step7](./resources/step7.gif)
+  ![step7](./assets/step7.gif)
 
   This has created an `IBAction` - which is an function in our code that is triggered by an action in our storyboard.
 
@@ -116,7 +116,7 @@ Download and install Xcode from the App Store. This may take a while — its
 
 9. Run your app in the iPhone 7 Plus simulator again, and tap on the button.
 
-  ![step8](./resources/step8.gif)
+  ![step8](./assets/step8.gif)
 
   You should see your message appear in the console!
 
@@ -132,11 +132,11 @@ Download and install Xcode from the App Store. This may take a while — its
 
 11. The text of the label is a little small. Head over to **Attributes Inspector** in the **Utility Area** (right hand pane).
 
-  ![step8](./resources/step8.png)
+  ![step8](./assets/step8.png)
 
   Increase the font size to 100pt. The original size of the label is now laughably small for our epic font size, so now drag the corners to make it big enough.
 
-  ![step9](./resources/step9.gif)
+  ![step9](./assets/step9.gif)
 
 12. Set the text alignment of your label to be `Centered` - it's in the same place as you set the font size.
 
@@ -202,4 +202,4 @@ Download and install Xcode from the App Store. This may take a while — its
 
   And ... run your app!
 
-  ![step10](./resources/step10.gif)
+  ![step10](./assets/step10.gif)
