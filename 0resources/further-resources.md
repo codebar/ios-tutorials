@@ -32,6 +32,11 @@
   [https://developer.apple.com/library/content/referencelibrary/GettingStarted/DevelopiOSAppsSwift/index.html?utm_source=statuscode&utm_medium=email](https://developer.apple.com/library/content/referencelibrary/GettingStarted/DevelopiOSAppsSwift/index.html?utm_source=statuscode&utm_medium=email)
   The official Swift & iOS resource from Apple, this is a tutorial which offers guided introduction to building your first app.
 
+## Websites & Other Resources
+
+* [RayWenderlich.com](https://www.raywenderlich.com/) Collection of iOS & Android tutorials which will take you from beginner to advanced. They have a podcast where they discuss a few topics a episode - checkout the archives. If you like the tutorial style, they also have books.
+
+* [Natasha the Robot](https://www.natashatherobot.com/) Natasha produces a weekly newsletter with all the latest iOS news, so subscribe! Her website also has a great collection of blogs and tutorials.
 
 ## Documentation
 
