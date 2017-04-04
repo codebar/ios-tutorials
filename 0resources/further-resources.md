@@ -47,3 +47,7 @@
   * **Swift Documentation**
   [https://developer.apple.com/swift/resources/](https://developer.apple.com/swift/resources/)
   Guides and reference, links to sample code and WWDC videos.
+
+## WWDC Videos
+
+[https://developer.apple.com/videos/](https://developer.apple.com/videos/). Archives of videos from Apple's World Wide Developer Conference. A lot of these are technical and are relevant to experienced iOS and macOS developers. But some of the talks around Swift are not platform specific and are useful if you've got some programming experience and want to know more about the Language.
