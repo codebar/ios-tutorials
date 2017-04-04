@@ -90,7 +90,8 @@ Download and install Xcode from the App Store. This may take a while — its
   class ViewController: UIViewController {
 
 
-  }```
+  }
+  ```
 
 7. Hold down the **ctrl** button on your keyboard, then click and drag from the button in your storyboard into the `ViewController` code - on an empty line between the `{  ... }`
 
