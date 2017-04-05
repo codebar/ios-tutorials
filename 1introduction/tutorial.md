@@ -65,8 +65,6 @@ Download and install Xcode from the App Store. This may take a while — its
 
   Think of the view as the puppet, and the view controller as the puppet master. Without something pulling the strings, the view is just a lifeless doll. And without the puppet, the puppet master is just someone doing silly voices to empty air.
 
-  ![muppets gif](https://giphy.com/gifs/frog-muppets-funny-J0UgtZkOjXOe)
-
 5.  Open the `ViewController.swift` file in the **Assistant Editor**. If it's not automatically there when you open the **Assistant Editor**, select it from the automatic or manual routes in the file navigator.
 
   ![step6](./assets/step6.gif)
