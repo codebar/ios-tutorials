@@ -48,9 +48,6 @@
   [https://developer.apple.com/swift/resources/](https://developer.apple.com/swift/resources/)
   Guides and reference, links to sample code and WWDC videos.
 
-<<<<<<< HEAD:0resources/further-resources.md
-
-
 ## Other resources
 
 **iOS Path to Mastery***
