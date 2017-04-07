@@ -47,3 +47,9 @@
   * **Swift Documentation**
   [https://developer.apple.com/swift/resources/](https://developer.apple.com/swift/resources/)
   Guides and reference, links to sample code and WWDC videos.
+
+
+
+## Other resources
+
+  * https://trello.com/b/dOV9dvBu/a-path-to-mastery-for-ios-development [Add notes - YC]
