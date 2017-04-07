@@ -52,4 +52,6 @@
 
 ## Other resources
 
-  * https://trello.com/b/dOV9dvBu/a-path-to-mastery-for-ios-development [Add notes - YC]
+  * **iOS Path to Mastery***
+  [https://trello.com/b/dOV9dvBu/a-path-to-mastery-for-ios-development](https://trello.com/b/dOV9dvBu/a-path-to-mastery-for-ios-development)
+  A trello board with guidance on some of the core skills you can build in different levels of learning. Offers a path to learning that you can tick off as you go.
