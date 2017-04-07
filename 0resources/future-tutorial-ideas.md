@@ -1,18 +1,13 @@
-@mostgood
-@kharrison
-
 ## Ideas for Future Tutorials
 
-These are some ideas for tutorial that would be great to have. If you're interested in writing some, or would recommend tutorial
+These are some ideas for tutorial that would be great to have. If you're interested in writing some, or would recommend tutorials for these topic, please do contribute.
 
 ### Extension to Clicker
 
-* Autolayout - potentially extended clicker
-
+* Autolayout
 * Models
-
 * Persisting counter score (high score?)
-  - NSUserDefaults (not CoreDate 😂)
+  - NSUserDefaults (not CoreData 😂)
   - See "Scorekeeper" app on App Story
   - Display with Table Views
 
@@ -24,13 +19,11 @@ These are some ideas for tutorial that would be great to have. If you're interes
 
 * Guide to getting your app on your phone
 
-
 ### Swift language
 
 * Optionals!
 * Protocols & Extensions
 * Control Flow
-
 
 ### Stand-Alone
 * Objective-C
