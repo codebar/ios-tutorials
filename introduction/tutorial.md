@@ -202,3 +202,47 @@ Download and install Xcode from the App Store. This may take a while — its
   And ... run your app!
 
   ![step10](./assets/step10.gif)
+
+### Bonus : Run your app on your Apple device
+
+Running your app in the simulator is cool, but you know what's even cooler? Running your app in your Apple devices! Couple years back, you need to have a developer account to run your app in a physical device, but luckily know Apple allows us to run our app using your everyday Apple account.
+
+#### Pre-requisites
+
+- 📱 Apple device (the more recent device the better) + cable
+- An Apple account
+
+##### A. Add your account in Xcode
+
+- From the menubar, go to `Xcode > Preferences...`
+- Click the `Accounts` tab (the second tab)
+- On bottom left, press the + icon
+- Select `Add Apple ID...`
+- Insert your Apple ID's credentials
+
+![add_apple_id](./assets/bonus_step1.png)
+
+##### B. Configure your project's signing
+
+- Go to `Navigator` area, select `Project navigator` tab, select your project name
+- Select your app target in the `Targets` tab
+- In the `Signing` area, select your account as the team name
+
+![select_team](./assets/bonus_step2.png "Select team")
+
+##### C. Configure your device 📱
+
+- Plug your Apple device to your development machine (this will trigger Xcode to [processes symbol files from your devices](http://stackoverflow.com/a/19706886/851515), which will take a sometime)
+- Instead of running on simulator, select your device instead
+![select device](./assets/bonus_step3a.png "Select your apple device")
+- Press the play button to run the app!
+- Errm... not so fast. We need to allow codesign to access our keychain, press `Always Allow`
+![allow keychain](./assets/bonus_step3b.png "Allow codesign to access keychain")
+- Almost there, you will be prompted to verify your account in your device
+![verify alert](./assets/bonus_step3c.png "Verify account developer")
+- Now on your iOS device, go to `Settings` > `General` > `Profiles & Device Management`, tap your account under `Developer App`, tap `Trust '<your apple account email>'`, and confirm by tapping `Trust` again
+![verify account](./assets/bonus_step3d.png "Verify account in your device")
+- Back at Xcode, press play button to build and run again
+- 🎉
+
+It's great to see that Apple makes it easy for us to try our app in our actual hands. Happy testing!
