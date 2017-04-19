@@ -48,6 +48,12 @@
   [https://developer.apple.com/swift/resources/](https://developer.apple.com/swift/resources/)
   Guides and reference, links to sample code and WWDC videos.
 
+## Other resources
+
+**iOS Path to Mastery***
+  [https://trello.com/b/dOV9dvBu/a-path-to-mastery-for-ios-development](https://trello.com/b/dOV9dvBu/a-path-to-mastery-for-ios-development)
+  A trello board with guidance on some of the core skills you can build in different levels of learning. Offers a path to learning that you can tick off as you go.
+
 ## WWDC Videos
 
 [https://developer.apple.com/videos/](https://developer.apple.com/videos/). Archives of videos from Apple's World Wide Developer Conference. A lot of these are technical and are relevant to experienced iOS and macOS developers. But some of the talks around Swift are not platform specific and are useful if you've got some programming experience and want to know more about the Language.
