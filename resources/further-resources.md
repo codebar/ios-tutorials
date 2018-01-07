@@ -16,10 +16,10 @@
     The official Swift & iOS resource from Apple, this is a tutorial which offers guided introduction to building your first app.
 
 ### Great if you already have some programming experience
-  * **Developing iOS 1 - Apps with Swift by Stanford University**
-  [https://itunes.apple.com/us/course/developing-ios-10-apps-with-swift/id1198467120](https://itunes.apple.com/us/course/developing-ios-10-apps-with-swift/id1198467120)
+  * **Developing iOS 11 - Apps with Swift by Stanford University**
+  [https://itunes.apple.com/gb/course/developing-ios-11-apps-with-swift/id1309275316](https://itunes.apple.com/gb/course/developing-ios-11-apps-with-swift/id1309275316)
 
-  Hands down (in my opinion) the best Swift & iOS course out there - people at Stanford uni pay a lot of money for this course, and you can get it completely free on iTunes U.  With the release of the iOS 10 version — it's bang-up-to-date. The only catch is that it does assume prior programming knowledge of another object-oriented language, so if you're new to programming, I'd start with Treehouse.
+  Hands down (in my opinion) the best Swift & iOS course out there - people at Stanford uni pay a lot of money for this course, and you can get it completely free on iTunes U.  With the release of the iOS 11 version — it's bang-up-to-date. The only catch is that it does assume prior programming knowledge of another object-oriented language, so if you're new to programming, I'd start with Treehouse.
 
   * **Getting Started with TDD in Swift 3**
   [https://medium.com/@ynzc/getting-started-with-tdd-in-swift-2fab3e07204b](https://medium.com/@ynzc/getting-started-with-tdd-in-swift-2fab3e07204b)
