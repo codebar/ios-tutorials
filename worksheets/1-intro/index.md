@@ -1,4 +1,7 @@
-# codebar
+---
+layout: page
+title: iOS Clicker Worksheet
+---
 
 ## iOS Clicker Worksheet
 
