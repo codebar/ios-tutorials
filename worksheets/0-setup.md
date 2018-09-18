@@ -2,7 +2,7 @@
 layout: page
 title: Getting set up for iOS development
 ---
-*If you are attending an iOS workshop at Codebar, it is very useful if you can download Xcode before you arrive as it is a big download and the internet can become a problem if too many people try and download it at once*
+*If you are attending an iOS workshop at codebar, it is very useful if you can download Xcode before you arrive as it is a big download and the internet can become a problem if too many people try and download it at once*
 
 ## You will need ##
 - An Apple MacBook
