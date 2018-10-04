@@ -16,7 +16,7 @@ This is the home for the codebar iOS tutorials! These are designed to be used at
     <div class="card-block">
       <h4 class="card-title">Getting Setup</h4>
       <p>All the things you need to do <em>before</em> attending a codebar iOS workshop</p>
-      <a href="{{ site.baseurl }}/worksheets/0-setup/" class="btn btn-primary">Get Set Up</a>
+      <a href="{{ site.baseurl }}/worksheets/0-setup" class="btn btn-primary">Get Set Up</a>
     </div>
   </div>
 </div>
