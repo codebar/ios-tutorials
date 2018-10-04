@@ -1,5 +1,5 @@
 ---
-title: Codebar iOS Workshop Resources
+title: codebar iOS Workshop Resources
 layout: page
 redirect_from: /worksheets/
 ---
