@@ -19,4 +19,4 @@ This is another series of introduction to iOS. This time we will introduce
 
 We'll be building a apple Facts app, where the user will see a list of Apple images and be able click on one and move to a single screen with more detail about that apple.
 
-  ![step1](.assets/appleFactsDemo.gif)
+  ![step1](./assets/appleFactsDemo.gif)
