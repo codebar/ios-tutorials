@@ -1,4 +1,4 @@
-# Apple Facts
+## Apple Facts
 
 * Introduce Apple facts: Finished Product preview
 * Do not eat disclaimer
@@ -12,3 +12,11 @@
 * Build up template of detail view controller (image, title, description) and explain constraints
 * Passing information using prepare for Segue
 * Adding more apple images and configuring their segues to detail view.
+
+This is another series of introduction to iOS. This time we will introduce
+
+### What are we going to build?
+
+We'll be building a apple Facts app, where the user will see a list of Apple images and be able click on one and move to a single screen with more detail about that apple.
+
+  ![step1](.assets/appleFactsDemo.gif)
