@@ -52,9 +52,9 @@ Download and install Xcode from the App Store. This may take a while — its
 
   ![step4](./assets/step4.gif)
 
-##### 2. Now, open the **Utility Area**, and go to the **Object Library**. In the search box, find a button, and drag it to the bottom of the view shown in the storyboard.
+##### 2. Now, click on the **Object Library** next to the **Standard Editor**. In the search box, find a button, and drag it to the bottom of the view shown in the storyboard.
 
-  ![step5](./assets/step5.gif)
+  ![step5](./assets/object-Library.png)
 
 ##### 3. Run your app on the iPhone 7 Plus Simulator. See your button, there in all its glory at the bottom of the screen. Go ahead - press it!
 
@@ -128,7 +128,7 @@ Download and install Xcode from the App Store. This may take a while — its
 
 ###### 10. Time to build our clicker.
 
-  As you did with the button, find a `Label` from the `Object Library` and drag it onto the storyboard, in the middle of the view.
+  As you did with the button, find a `Label` from the `Object Library` and drag it onto the storyboard, in the middle of the view. (Please note the location of the Object library has changed for Xcode 10!)
 
   (If you need to check back to Step 2 of this tutorial for a reminder of how to do this)
 
