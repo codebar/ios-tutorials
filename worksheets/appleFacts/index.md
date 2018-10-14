@@ -32,21 +32,23 @@ Download and install Xcode from the App Store. This may take a while — its
 
 ##### 1. Open Xcode and click **Create a new Xcode project**.
 
-  ![step1](./assets/step1.png)
+  ![step1](./assets/AppleFacts-step1.png)
 
 ##### 2. Select Single View Application from the **iOS > Application list**, and click **Next**
 
-  ![step2](./assets/step2.png)
+  ![step2](./assets/AppleFacts-step2.png)
 
 ##### 3. Fill in the project details:
 
-* Product Name: AppleFacts
-* Team: None
-* Organization Name: Whatever you want — your name is always a good fill-in
-* Organization Identifier: com.(OrganizationName)
+* **Product Name**: AppleFacts
+* **Team**: None
+* **Organization Name**: Whatever you want — your name is always a good fill-in
+* **Organization Identifier**: com.(OrganizationName)
 
 Make sure Swift is selected as the language, and Devices is set to Universal.
 
 Untick the 3 boxes at the bottom.
 
 Click Next
+
+  ![step3](./assets/AppleFacts-step3.png)
