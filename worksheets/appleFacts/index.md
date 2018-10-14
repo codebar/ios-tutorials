@@ -52,3 +52,11 @@ Untick the 3 boxes at the bottom.
 Click Next
 
   ![step3](./assets/AppleFacts-step3.png)
+
+##### 4. Select a sensible place to save your project, then hit **Create**.
+
+The first thing will be to get hold of the images we will need for our project. Click [here](https://drive.google.com/drive/folders/1kZIvWC3Mx-HrsEoC7r4WriVNxnwc6nBj?usp=sharing) to download the apple images.
+
+Once downloaded, drag the images into the `Assets.xcassets` folder of the project
+
+  ![finalDemo](./assets/AppleImagesToAssetsFolder.gif)
