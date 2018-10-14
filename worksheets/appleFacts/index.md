@@ -19,4 +19,34 @@ This is another series of introduction to iOS. This time we will introduce
 
 We'll be building a apple Facts app, where the user will see a list of Apple images and be able click on one and move to a single screen with more detail about that apple.
 
-  ![step1](./assets/appleFactsDemo.gif)
+  ![finalDemo](./assets/appleFactsDemo.gif)
+
+
+### Pre-requisites
+
+In order to do iOS development, you will need a Mac.
+
+Download and install Xcode from the App Store. This may take a while — its a big program.
+
+### Creating a Project
+
+##### 1. Open Xcode and click **Create a new Xcode project**.
+
+  ![step1](./assets/step1.png)
+
+##### 2. Select Single View Application from the **iOS > Application list**, and click **Next**
+
+  ![step2](./assets/step2.png)
+
+##### 3. Fill in the project details:
+
+* Product Name: AppleFacts
+* Team: None
+* Organization Name: Whatever you want — your name is always a good fill-in
+* Organization Identifier: com.(OrganizationName)
+
+Make sure Swift is selected as the language, and Devices is set to Universal.
+
+Untick the 3 boxes at the bottom.
+
+Click Next
