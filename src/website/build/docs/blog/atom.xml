@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://codebar.github.io/ios-tutorials/blog</id>
+    <title>Codebar iOS Tutorials Blog</title>
+    <updated>2019-11-07T06:00:00Z</updated>
+    <generator>Feed for Node.js</generator>
+    <link rel="alternate" href="https://codebar.github.io/ios-tutorials/blog"/>
+    <subtitle>The best place to stay up-to-date with the latest Codebar iOS Tutorials news and events.</subtitle>
+    <logo>https://codebar.github.io/ios-tutorials/img/codebar-full-white-logo.png</logo>
+    <entry>
+        <title type="html"><![CDATA[November 2019]]></title>
+        <id>https://codebar.github.io/ios-tutorials/blog/2019/11/07/meetup.html</id>
+        <link href="https://codebar.github.io/ios-tutorials/blog/2019/11/07/meetup.html">
+        </link>
+        <updated>2019-11-07T06:00:00Z</updated>
+        <summary type="html"><![CDATA[<p>We are going to be hosting a workshop at Pusher on the 7th November -
+<a href="https://codebar.io/events/intro-to-ios-7">RSVP here</a></p>
+]]></summary>
+        <author>
+            <name>Danielle Emma Vass</name>
+            <uri>http://twitter.com/de_velopment</uri>
+        </author>
+    </entry>
+</feed>
