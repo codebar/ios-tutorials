@@ -23,8 +23,8 @@ const users = [
 const siteConfig = {
   title: 'Codebar iOS Tutorials', // Title for your website.
   tagline: 'A website for the codebar ios tutorials',
-  url: 'https://codebar.github.io/ios-tutorials', // Your website URL
-  baseUrl: '/', // Base URL for your project */
+  url: 'https://codebar.github.io', // Your website URL
+  baseUrl: '/ios-tutorials/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
