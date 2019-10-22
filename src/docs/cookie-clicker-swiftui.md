@@ -47,11 +47,11 @@ Download and install Xcode from the App Store. This may take a while — its
 
 ## Build a Button
 
-### 1. Open up the **Navigation Area** in Xcode, and open up the `Main.storyboard` file.
+### 1. Open up the **Navigation Area** in Xcode, and then the `ContentView.swift` file and its associated Canvas.
 
-  > A storyboard is a visual representation of the user interface of an iOS application. It's one of the ways we can create our user interface (the visual bit of an app).
-
-  ![step4](assets/cookie_clicker_storyboard/step4.gif)
+  ![step4](assets/cookie_clicker_swiftui/step4.gif)
+  
+  ----- Updated up to here -------------------
 
 ### 2. Now, click on the **Object Library** next to the **Standard Editor**. In the search box, find a button, and drag it to the bottom of the view shown in the storyboard.
 
