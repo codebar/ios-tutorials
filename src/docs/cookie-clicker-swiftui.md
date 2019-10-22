@@ -42,6 +42,8 @@ Download and install Xcode from the App Store. This may take a while — its
 ### 4. Select a sensible place to save your project, then hit **Create**.
 
   Take some time to look around the project that's been created with your coach. What files are there? How do you run your app?
+  
+  If you are running Mac OS X Catalina, try running the preview to see what the default project provides.
 
 ## Build a Button
 
