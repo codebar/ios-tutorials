@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0">
     <channel>
-        <title>Codebar iOS Tutorials Blog</title>
+        <title>codebar iOS Tutorials Blog</title>
         <link>https://codebar.github.io/ios-tutorials/blog</link>
-        <description>The best place to stay up-to-date with the latest Codebar iOS Tutorials news and events.</description>
+        <description>The best place to stay up-to-date with the latest codebar iOS Tutorials news and events.</description>
         <lastBuildDate>Thu, 07 Nov 2019 06:00:00 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
-            <title>Codebar iOS Tutorials Blog</title>
+            <title>codebar iOS Tutorials Blog</title>
             <url>https://codebar.github.io/ios-tutorials/img/codebar-full-white-logo.png</url>
             <link>https://codebar.github.io/ios-tutorials/blog</link>
         </image>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://codebar.github.io/ios-tutorials/blog</id>
-    <title>Codebar iOS Tutorials Blog</title>
+    <title>codebar iOS Tutorials Blog</title>
     <updated>2019-11-07T06:00:00Z</updated>
     <generator>Feed for Node.js</generator>
     <link rel="alternate" href="https://codebar.github.io/ios-tutorials/blog"/>
-    <subtitle>The best place to stay up-to-date with the latest Codebar iOS Tutorials news and events.</subtitle>
+    <subtitle>The best place to stay up-to-date with the latest codebar iOS Tutorials news and events.</subtitle>
     <logo>https://codebar.github.io/ios-tutorials/img/codebar-full-white-logo.png</logo>
     <entry>
         <title type="html"><![CDATA[November 2019]]></title>
