@@ -21,7 +21,7 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'Codebar iOS Tutorials', // Title for your website.
+  title: 'codebar iOS Tutorials', // Title for your website.
   tagline: 'A website for the codebar ios tutorials',
   url: 'https://codebar.github.io', // Your website URL
   baseUrl: '/ios-tutorials/', // Base URL for your project */
