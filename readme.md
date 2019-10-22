@@ -21,7 +21,7 @@ We are now using [docusaurus](https://docusaurus.io) to build our tutorials. You
 
 ## How to deploy
 
-We're using GitHub pages to host whatevers in the `docs` folder in root. Unfortunately this is a little bit of a manual process at the moment but you need to:
+We're using GitHub pages to host the contents of the `docs` folder in root. Unfortunately this is a little bit of a manual process at the moment but you need to:
 1. Navigate to `src/website`.
 2. Run `npm run build`.
 3. Copy the `ios-tutorials` folder into the root of this directory.
