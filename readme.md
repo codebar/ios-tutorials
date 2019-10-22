@@ -16,7 +16,7 @@ We are now using [docusaurus](https://docusaurus.io) to build our tutorials. You
 1. Create the page in the `docs` folder (make sure it follows the same structure as the others).
 2. Any images you need can be places in a folder in `docs/assets`.
 3. Make sure you link to it in the `website/sidebars.json` properly.
-4. To test the sidebars you need to stop running it locally, then run it again.
+4. To test the sidebars, you need to stop running it locally, then run it again.
 5. If required, add a section in `website/pages/index.js` so everyone knows it exists!
 
 ## How to deploy
