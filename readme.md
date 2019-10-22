@@ -27,3 +27,10 @@ We're using GitHub pages to host whatevers in the `docs` folder in root. Unfortu
 3. Copy the `ios-tutorials` folder into the root of this directory
 4. Delete the `docs` folder (it's okay, we're going to fix this in a second)
 4. Rename `ios-tutorials` to `docs`.
+
+## Additional learning materials 
+
+- The official [Swift](https://developer.apple.com/documentation/swift) language documentation. 
+- [Swift](https://www.pluralsight.com/courses/swift3-fundamentals) Fundermentals course on pluralsight. 
+- A [Swift]() medium article on basic swift. 
+
