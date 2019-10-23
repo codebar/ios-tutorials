@@ -212,6 +212,46 @@ Choose `Large Title` for the font.
 
 ![step7](assets/cookie_clicker_swiftui/step7.gif)
 
+Notice that in the editor, the modifier has been added to the `Text` view that matches this choice.
+
+Working with your coach, try to apply other sizes and styles to this `Text` view.
+
+### 15. Add some spacing
+
+Let's add some separation between the elements. `VStack`s are quite helpful in laying items out. All that needs to be done is for some spacers to be added between the elements and the it will handle layout.
+
+Add a `Spacer()` above and below the `Text` view. The entire file should now look like this:
+
+```swift
+import SwiftUI
+
+struct ContentView: View {
+    @State private var count = 0
+
+    var body: some View {
+        VStack {
+            Spacer()
+            Text("\(count)")
+                .font(.largeTitle)
+            Spacer()
+            Button(action: { self.count += 1 }) {
+                Text("Button")
+            }
+        }
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
+```
+
+And the Canvas shows the result:
+
+![step8](assets/cookie_clicker_swiftui/step8.png)
+
     ----- Updated up to here -------------------
 
 
