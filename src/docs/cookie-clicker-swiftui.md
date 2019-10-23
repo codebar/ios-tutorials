@@ -122,7 +122,7 @@ struct ContentView: View {
         VStack {
             Text(showGreeting ? "Hello CodeBar!" : "")
             Button(action: { self.showGreeting.toggle() }) {
-                Text(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/)
+                Text("Button")
             }
         }
     }
