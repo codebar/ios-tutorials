@@ -45,7 +45,7 @@ Take some time to look around the project that's been created with your coach. W
   
 If you are running Mac OS X Catalina, try running the preview to see what the default project provides.
 
-## Build a Button
+## Add a Button
 
 ### 1. Open up the **Navigation Area** in Xcode, and then the `ContentView.swift` file and its associated Canvas.
 
@@ -74,72 +74,73 @@ Celebrate appropriately!
 
 Try changing the _VStack_ to an _HStack_ Are the results what you expected?
 
-  
-  ----- Updated up to here -------------------
+However, it would be even more awesome if our button actually did something.
 
-### 4. However, it would be even more awesome if our button actually did something.
+## Make the Button do something
 
-  To do this we're going to need more than just our storyboard - we'll need a **View Controller**.
+To do this we are going to need some state in our view. SwiftUI is a _declarative_ framework. That means that you write the view to show different things according to its state, and actions change the state. Internally, SwiftUI keeps track of the state, and when it changes it redraws the view.
 
-  > View controllers are the foundation of your app’s internal structure. Every app has at least one view controller, and most apps have several. Each view controller manages a portion of your app’s user interface as well as the interactions between that interface and the underlying data.
+### 1. Create some state for the view
 
-  Think of the view as the puppet, and the view controller as the puppet master. Without something pulling the strings, the view is just a lifeless doll. And without the puppet, the puppet master is just someone doing silly voices to empty air.
+Create a state variable at the top of the definition of `ContentView`. We make it `private` because it is internal to the view, and we give it a default value of `false` which implicitly makes `showGreeting` a variable that holds a `Bool` (Now is the time to ask your Coach questions).
 
-### 5.  Open the `ViewController.swift` file in the **Assistant Editor**. If it's not automatically there when you open the **Assistant Editor**, select it from the automatic or manual routes in the file navigator.
+```swift
+struct ContentView: View {
+    @State private var showGreeting = false
+    var body: some View {
+    <...>
+```
 
-  ![step6](assets/cookie_clicker_storyboard/step6.gif)
+We are going to use this to configure what the view displays.
 
-### 6. Let's take a quick look at the code in `ViewController.swift`
+### 2. Configure the view to display according to the state
 
-  At the top there's some general information on the file and copyright. This is added in every new file you create in Xcode, and you can ignore it.
+Change the string that is displayed in the `Text` view depending on this state:
 
-  Next we import UIKit into this file. UIKit is a framework provided by Apple to help you build iOS apps. It defines the core components - such as `UIButton` (like the one we've added to our storyboard) and `UIViewControllers`, which we're about to use.
+```swift
+Text(showGreeting ? "Hello CodeBar!" : "")
+```
 
-  Now onto the interesting bit. This code is creating a new **View Controller** - imaginatively called `ViewController`, and declared it as a type of `UIViewController` - which means it inherits all the useful things a view controller can do.
+When `showGreeting` is `true` the label will display the greeting, otherwise it will be empty.
 
-  There's also 2 functions inside the `ViewController` - `viewDidLoad()` and `didReceiveMemoryWarning()`. We don't actually need these right now, so go ahead and delete them.
+### 3. Use the Button's action to change the state
 
-  Now our `ViewController` should look like this:
+When you dragged the button onto the canvas it created an empty `action` This is a closure, and when the button is tapped it will perform whatever code is written in this closure. We are going to use this to toggle the `showGreeting` state.
+
+Edit the Button code look like this:
+
+```swift
+Button(action: { self.showGreeting.toggle() })
+```
+
+The `ContentView` struct should now look like this:
+
+```swift
+struct ContentView: View {
+    @State private var showGreeting = false
+    var body: some View {
+        VStack {
+            Text(showGreeting ? "Hello CodeBar!" : "")
+            Button(action: { self.showGreeting.toggle() }) {
+                Text(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/)
+            }
+        }
+    }
+}
+```
+
+### 4. Run the app in the Simulator or by using the Canvas's live preview feature
+
+As you tap the button, the greeting appears and disappears!
+
+/giphy Celebrate
 
 
-  ```swift
-  import UIKit
+This is not trivial. You have learned an important part of developing using SwiftUI. You create state, you write your view to respond to the state, and you have actions that change the state. The framework takes care of redrawing the view when the state changes.
 
-  class ViewController: UIViewController {
+If you have done any iOS development before, or even the other CodeBar tutorial, you can see how little code is needed. There are no `ViewController`s. There are no `Storyboards`. You write code and see the results immediately.
 
-
-  }
-  ```
-
-### 7. Hold down the **ctrl** button on your keyboard, then click and drag from the button in your storyboard into the `ViewController` code - on an empty line between the `{  ... }`
-
-  In the pop-up that appears:
-  * Set the **Connection Type** to be `Action`
-  * Type the **Name** of the function as `buttonTapped`
-
-  Hit **Connect**
-
-  ![step7](assets/cookie_clicker_storyboard/step7.gif)
-
-  This has created an `IBAction` - which is a function in your code that is triggered by an action in your storyboard.
-
-### 8. Let's see if our button works!
-
-  First, in the body of the `buttonTapped` function let's add a print statement:
-
-  ```swift
-  @IBAction func buttonTapped(_ sender: Any) {
-      print("Hello, world")
-  }
-  ```
-
-### 9. Run your app in the iPhone 7 Plus simulator again, and tap on the button.
-
-  ![step8](assets/cookie_clicker_storyboard/step8.gif)
-
-  You should see your message appear in the console!
-
-  /giphy Celebrate
+    ----- Updated up to here -------------------
 
 ## Count the Clicker
 
