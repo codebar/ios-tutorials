@@ -312,5 +312,3 @@ If you've finished all of the above why not think about some of the following id
 * make the background change after a set amount of clicks? How about creating an array of colours to change every set interval e.g. after 5 taps.
 
 * change your button into a picture button, you could make a cookie clicker? Make the picture change after a set amount of clicks.
-
-* check out Auto Layout with your coach. How would you go about fitting this onto an iPad versus a smallest iPhone?
