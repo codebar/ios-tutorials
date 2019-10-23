@@ -47,13 +47,13 @@ If you are running Mac OS X Catalina, try running the preview to see what the de
 
 ## Add a Button
 
-### 1. Open up the **Navigation Area** in Xcode, and then the `ContentView.swift` file and its associated Canvas.
+### 5. Open up the **Navigation Area** in Xcode, and then the `ContentView.swift` file and its associated Canvas.
 
 ![step4](assets/cookie_clicker_swiftui/step4.gif)
   
 If you click on the `Resume` button in the top right, and you are running Mac OS X Catalina you will see a preview of the **Hello World** application that the template has provided for you.
   
-### 2. Edit the Canvas and add a Button
+### 6. Edit the Canvas and add a Button
 
 When using SwiftUI the Canvas provides a live view of your code. Editing the Canvas will also update your code! We shall be adding code from the Editor a little later on, but for now just add a button to the canvas.
   
@@ -66,7 +66,7 @@ When using SwiftUI the Canvas provides a live view of your code. Editing the Can
 
 If you look at the Editor, you can see that this has created a _VStack_ with both the label and the button. A _VStack** is a built in view that arranges the contained views vertically.
 
-### 3. Run the app on the Simulator or the canvas.
+### 7. Run the app on the Simulator or the canvas.
 
 You can either run the app in the simulator or use the live preview in the Canvas to see the visual effect of pressing the button.
  
@@ -80,7 +80,7 @@ However, it would be even more awesome if our button actually did something.
 
 To do this we are going to need some state in our view. SwiftUI is a _declarative_ framework. That means that you write the view to show different things according to its state, and actions change the state. Internally, SwiftUI keeps track of the state, and when it changes it redraws the view.
 
-### 1. Create some state for the view
+### 8. Create some state for the view
 
 Create a state variable at the top of the definition of `ContentView`. We make it `private` because it is internal to the view, and we give it a default value of `false` which implicitly makes `showGreeting` a variable that holds a `Bool` (Now is the time to ask your Coach questions).
 
@@ -93,7 +93,7 @@ struct ContentView: View {
 
 We are going to use this to configure what the view displays.
 
-### 2. Configure the view to display according to the state
+### 9. Configure the view to display according to the state
 
 Change the string that is displayed in the `Text` view depending on this state:
 
@@ -103,7 +103,7 @@ Text(showGreeting ? "Hello CodeBar!" : "")
 
 When `showGreeting` is `true` the label will display the greeting, otherwise it will be empty.
 
-### 3. Use the Button's action to change the state
+### 10. Use the Button's action to change the state
 
 When you dragged the button onto the canvas it created an empty `action` This is a closure, and when the button is tapped it will perform whatever code is written in this closure. We are going to use this to toggle the `showGreeting` state.
 
@@ -118,6 +118,7 @@ The `ContentView` struct should now look like this:
 ```swift
 struct ContentView: View {
     @State private var showGreeting = false
+    
     var body: some View {
         VStack {
             Text(showGreeting ? "Hello CodeBar!" : "")
@@ -129,7 +130,7 @@ struct ContentView: View {
 }
 ```
 
-### 4. Run the app in the Simulator or by using the Canvas's live preview feature
+### 11. Run the app in the Simulator or by using the Canvas's live preview feature
 
 As you tap the button, the greeting appears and disappears!
 
@@ -139,6 +140,64 @@ As you tap the button, the greeting appears and disappears!
 This is not trivial. You have learned an important part of developing using SwiftUI. You create state, you write your view to respond to the state, and you have actions that change the state. The framework takes care of redrawing the view when the state changes.
 
 If you have done any iOS development before, or even the other CodeBar tutorial, you can see how little code is needed. There are no `ViewController`s. There are no `Storyboards`. You write code and see the results immediately.
+
+ 
+## Make the Counter
+
+There are two major tasks to get the make the counter app. The functionality - getting the counter to increment on button clicks and showing the new number. The UI, getting an app that looks nice and is easy to use. This tutorial will create the functionality first and then move on to the UI. You may choose to tackle the tasks in the alternate order. Have a brief discussion with your Coach about the pros and cons of each approach.
+
+### 12. Create the Counter functionality
+
+We are a good way towards this, we already have a `Button` with an action, and a `Text` view that displays something. 
+
+Change the state variable to hold a number instead of a `Bool`
+
+```swift
+@State private var count = 0
+```
+
+Since the state is variable is now a number and not a string, change the `Text` view to display this:
+
+```swift
+Text("\(count)")
+```
+
+Finally change the `Button`'s action to increment this variable
+
+```swift
+Button(action: { self.count += 1 })
+```
+
+The entire file should now look like this
+
+```swift
+import SwiftUI
+
+struct ContentView: View {
+    @State private var count = 0
+
+    var body: some View {
+        VStack {
+            Text("\(count)")
+            Button(action: { self.count += 1 }) {
+                Text("Button")
+            }
+        }
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
+```
+
+### 13. Run the app in the Simulator on the Canvas live preview to see the counter working
+
+![step6](assets/cookie_clicker_swiftui/step6.gif)
+
+
 
     ----- Updated up to here -------------------
 
