@@ -198,90 +198,22 @@ struct ContentView_Previews: PreviewProvider {
 ![step6](assets/cookie_clicker_swiftui/step6.gif)
 
 
+## Make it look better
+
+Having the button and the label so close together isn't the nicest looking UI. Nor is it the easiest to use. And the text for the counter seems a little small. Let's fix these things
+
+### 14. Increase the size of the numbers
+
+In the canvas Cmd + Click on the `Text` view, this brings up an inspector.
+
+Select the `show SwiftUI Inspector...` option.
+
+Choose `Large Title` for the font.
+
+![step7](assets/cookie_clicker_swiftui/step7.gif)
 
     ----- Updated up to here -------------------
 
-## Count the Clicker
-
-### 10. Time to build our clicker.
-
-  As you did with the button, find a `Label` from the `Object Library` and drag it onto the storyboard, in the middle of the view. (Please note the location of the Object library has changed for Xcode 10!)
-
-  (If you need to check back to Step 2 of this tutorial for a reminder of how to do this)
-
-### 11. The text of the label is a little small. Head over to **Attributes Inspector** in the **Utility Area** (right hand pane).
-
-  ![step8](assets/cookie_clicker_storyboard/step8.png)
-
-  Increase the font size to 100pt. The original size of the label is now laughably small for our epic font size, so now drag the corners to make it big enough.
-
-  ![step9](assets/cookie_clicker_storyboard/step9.gif)
-
-### 12. Set the text alignment of your label to be `Centered` - it's in the same place as you set the font size.
-
-### 13. Now, let's create a link between our label and the `ViewController`.
-
-  We do this using an `IBOutlet`, and it's created the same way as the `IBAction` we used to link our button to the `ViewController`.
-
-  Give it a try - look back at Step 7 if you need to.
-
-  When the popup appears:
-    * Set the **Connection Type** to `Outlet`
-    * Give it the name `counterLabel`
-
-  Your `ViewController` should now look like this:
-
-  ```swift
-    import UIKit
-
-    class ViewController: UIViewController {
-
-      @IBOutlet weak var counterLabel: UILabel!
-
-      @IBAction func buttonTapped(_ sender: Any) {
-        print("Hello, world")
-      }
-
-    }
-  ```
-
-### 14. Next we want to get actions on our button changing the appearance of our label.
-
-  Inside of your `buttonTapped` function add the following line:
-
-  `counterLabel.text = "🙌"`
-
-  (Hint: To bring up the emoji keyboard, hit **ctrl** + **cmd** + **space**)
-
-  Run your app, and hit that button, and (fingers crossed) see your emoji appear.
-
-## 3 ... 2 ... 1 ... 🚀
-
-### 15. Finally, let's make the counter increment (goodbye emojis, for now).
-
-  For this, our ViewController is going to need a local variable. Add this line to the top of your `ViewController`:
-
-  `var counter = 0`
-
-  This will keep count of the taps on our button.
-
-### 16. Now, let's hook up our button and our counter.
-
-  Inside the `buttonTapped` method, increment the counter:
-
-  `counter += 1`
-
-### 17. The final step is to make the label show the latest value of the counter.
-
-  First, delete the placeholder text "Label" from your label in the storyboard, and replace it with `0`.
-
-  Then in the `buttonTapped` method replace the emoji inside the `"..."` with:
-
-  `"\(counter)"`
-
-  And ... run your app!
-
-  ![step10](assets/cookie_clicker_storyboard/step10.gif)
 
 ## Bonus : Run your app on your Apple device
 
