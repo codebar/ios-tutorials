@@ -2,15 +2,15 @@
 title: Cookie Clicker with SwiftUI
 ---
 
-This tutorial is an intro to the world of iOS development using Apple's latest UI framework: [SwiftUI](https://developer.apple.com/xcode/swiftui/)
+This tutorial is an introduction to the world of iOS development using Apple's latest UI framework: [SwiftUI](https://developer.apple.com/xcode/swiftui/)
 
 We'll be building a counter app, where the user will press a button and increment the number on the screen.
 
 ## Pre-requisites
 
-In order to work through this tutorial, you will need a Mac with Xcode 11 installed. Xcode 11 is the minimum version that supports SwiftUI. It is useful to have Mac OSX Catalina installed to see live previews in Xcode, but you can still use Mac OSX Mojave.
+In order to work through this tutorial, you will need a Mac with Xcode 11 installed. Xcode 11 is the minimum version that supports SwiftUI. It is useful to have Mac OSX Catalina installed to see live previews in Xcode, but you can still use Mac OS X Mojave.
 
-Download and install Xcode from the App Store. This may take a while — its a big program. If you are at a Codebar ask the coaches before downloading it from the App Store as they frequently have a copy on a USB drive which will save installation time.
+Download and install Xcode from the App Store. This may take a while — its a big program. If you are at a Codebar ask the coaches before downloading it from the App Store as they frequently have a copy on a USB drive which will save some installation time, but it would be better if you come to the workshop with it installed.
 
 ## Creating a Project
 
@@ -72,7 +72,7 @@ You can either run the app in the simulator or use the live preview in the Canva
  
 Celebrate appropriately! 
 
-Try changing the _VStack_ to an _HStack_ Are the results what you expected?
+Try changing the `VStack` to an `HStack` Are the results what you expect?
 
 However, it would be even more awesome if our button actually did something.
 
@@ -87,6 +87,7 @@ Create a state variable at the top of the definition of `ContentView`. We make i
 ```swift
 struct ContentView: View {
     @State private var showGreeting = false
+    
     var body: some View {
     <...>
 ```
@@ -252,8 +253,9 @@ And the Canvas shows the result:
 
 ![step8](assets/cookie_clicker_swiftui/step8.png)
 
-    ----- Updated up to here -------------------
+## Summary
 
+Congratulations! You've just created your first SwiftUI iOS app. You've learned how to move around Xcode and edit your code. You've added UI elements from the library and configured them. You've seen how to use previews, live previews, and the simulator. You've seen how SwiftUI is declarative. This is a good start!
 
 ## Bonus : Run your app on your Apple device
 
