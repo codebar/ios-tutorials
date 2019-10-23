@@ -20,46 +20,62 @@ Download and install Xcode from the App Store. This may take a while — its
 
 ### 2. Select Single View Application from the **iOS > Application list**, and click **Next**
 
-  ![step2](assets/cookie_clicker_swiftui/step2.png)
+![step2](assets/cookie_clicker_swiftui/step2.png)
 
 ### 3. Fill in the project details:
 
-  * Product Name: Clicker
-  * Team: None
-  * Organization Name: Whatever you want — your name is always a good fill-in
-  * Organization Identifier: com.(OrganizationName)
+- Product Name: Clicker
+- Team: None
+- Organization Name: Whatever you want — your name is always a good fill-in
+- Organization Identifier: com.(OrganizationName)
 
-  Make sure Swift is selected as the language.
+Make sure Swift is selected as the language.
   
-  Make sure SwiftUI is selected as the User Interface.
+Make sure SwiftUI is selected as the User Interface.
 
-  Untick the 3 boxes at the bottom.
+Untick the 3 boxes at the bottom.
 
-  Click Next
+Click Next
 
-  ![step3](assets/cookie_clicker_swiftui/step3.png)
+![step3](assets/cookie_clicker_swiftui/step3.png)
 
 ### 4. Select a sensible place to save your project, then hit **Create**.
 
-  Take some time to look around the project that's been created with your coach. What files are there? How do you run your app?
+Take some time to look around the project that's been created with your coach. What files are there? How do you run your app?
   
-  If you are running Mac OS X Catalina, try running the preview to see what the default project provides.
+If you are running Mac OS X Catalina, try running the preview to see what the default project provides.
 
 ## Build a Button
 
 ### 1. Open up the **Navigation Area** in Xcode, and then the `ContentView.swift` file and its associated Canvas.
 
-  ![step4](assets/cookie_clicker_swiftui/step4.gif)
+![step4](assets/cookie_clicker_swiftui/step4.gif)
+  
+If you click on the `Resume` button in the top right, and you are running Mac OS X Catalina you will see a preview of the **Hello World** application that the template has provided for you.
+  
+### 2. Edit the Canvas and add a Button
+
+When using SwiftUI the Canvas provides a live view of your code. Editing the Canvas will also update your code! We shall be adding code from the Editor a little later on, but for now just add a button to the canvas.
+  
+- Open the Library
+- Make sure you are browsing the Views
+- Search for Button
+- Drag the button under the label
+
+### ![step5](assets/cookie_clicker_swiftui/step5.gif)
+
+If you look at the Editor, you can see that this has created a _VStack_ with both the label and the button. A _VStack** is a built in view that arranges the contained views vertically.
+
+### 3. Run the app on the Simulator or the canvas.
+
+You can either run the app in the simulator or use the live preview in the Canvas to see the visual effect of pressing the button.
+ 
+Celebrate appropriately! 
+
+Try changing the _VStack_ to an _HStack_ Are the results what you expected?
+
   
   ----- Updated up to here -------------------
-
-### 2. Now, click on the **Object Library** next to the **Standard Editor**. In the search box, find a button, and drag it to the bottom of the view shown in the storyboard.
-
-  ![step5](assets/cookie_clicker_storyboard/object-Library.png)
-
-### 3. Run your app on the iPhone 7 Plus Simulator. See your button, there in all its glory at the bottom of the screen. Go ahead - press it!
-
-  Celebrate appropriately.
 
 ### 4. However, it would be even more awesome if our button actually did something.
 
