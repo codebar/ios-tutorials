@@ -15,3 +15,6 @@ Author: [@Apple](http://twitter.com/apple)
 * [SwiftUI by Example](https://www.youtube.com/playlist?list=PLuoeXyslFTubw4NtepDCis5tTqK37zT3Q) - A 31 part video series on building apps with SwiftUI.  
 Author: [@twostraws](http://twitter.com/twostraws)
 
+**Tools** 
+* [wtfautolayout?](https://www.wtfautolayout.com) - Why The Failure, Auto Layout? Parses error logs from Auto Layout on iOS and macOS and provides more intuitive visual descriptions of the conflicting constraints.  
+Author: [@johnpatrickmorgan](https://github.com/johnpatrickmorgan)
