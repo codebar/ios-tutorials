@@ -1,6 +1,6 @@
 {
   "arg": {
-    "tutorials": [ "intro", "cookie-clicker-storyboard"],
+    "tutorials": [ "intro", "cookie-clicker-storyboard", "cookie-clicker-swiftui"],
     "": ["other-resources"]
   }
 }
