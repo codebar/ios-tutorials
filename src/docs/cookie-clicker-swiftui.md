@@ -82,7 +82,7 @@ However, it would be even more awesome if our button actually did something.
 
 ## Make the Button do something
 
-To do this we are going to need some state in our view. SwiftUI is a _declarative_ framework. That means that you write the view to show different things according to its state, and actions change the state. Internally, SwiftUI keeps track of the state, and when it changes it redraws the view.
+To do this we are going to need some state in our view.
 
 ### 8. Create some state for the view
 
@@ -150,6 +150,13 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 ```
+
+### Interlude: What is @State?
+
+SwiftUI is a _declarative_ framework. That means that you write the view to show different things according to its state, and actions change the state, and let the framework handle redrawing the views when these change. If you have done any iOS programming with UIKit before this will be very different. We don't update properties and tell the view to redraw; we just update the properties.
+
+We can use normal constants and variables in SwiftUI, but when we use `@State` variables we are telling the framework that these are the values that the view depends on. SwiftUI keeps track of these internally, and when they change the view is redrawn.
+
 
 ### 11. Run the app in the Simulator or by using the Canvas's live preview feature
 
