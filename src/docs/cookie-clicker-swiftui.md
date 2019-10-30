@@ -33,7 +33,7 @@ Make sure Swift is selected as the language.
   
 Make sure SwiftUI is selected as the User Interface.
 
-Untick the 3 boxes at the bottom.
+Make sure the three boxes at the bottom are unchecked, we won't be using those options in this tutorial.
 
 Click Next
 
@@ -43,7 +43,7 @@ Click Next
 
 Take some time to look around the project that's been created with your coach. What files are there? How do you run your app?
   
-If you are running Mac OS X Catalina, try running the preview to see what the default project provides.
+If you are running on Mac OS X Catalina, try running the preview to see what the default project provides.
 
 ## Add a Button
 
@@ -51,7 +51,7 @@ If you are running Mac OS X Catalina, try running the preview to see what the de
 
 ![step4](assets/cookie_clicker_swiftui/step4.gif)
   
-If you click on the `Resume` button in the top right, and you are running Mac OS X Catalina you will see a preview of the **Hello World** application that the template has provided for you.
+If you click on the `Resume` button in the top right, and you are running on Mac OS X Catalina you will see a preview of the **Hello World** application that the template has provided for you.
   
 ### 6. Edit the Canvas and add a Button
 
@@ -64,7 +64,7 @@ When using SwiftUI the Canvas provides a live view of your code. Editing the Can
 
 ### ![step5](assets/cookie_clicker_swiftui/step5.gif)
 
-If you look at the Editor, you can see that this has created a _VStack_ with both the label and the button. A _VStack** is a built in view that arranges the contained views vertically.
+If you look at the Editor, you can see that this has created a `VStack` with both the label and the button. A `VStack` is a built in view that arranges the contained views vertically.
 
 ### 7. Run the app on the Simulator or the canvas.
 
@@ -73,6 +73,8 @@ You can either run the app in the simulator or use the live preview in the Canva
 Celebrate appropriately! 
 
 Try changing the `VStack` to an `HStack` Are the results what you expect?
+
+A `HStack` is a view that arranges its contained views horizontally.
 
 However, it would be even more awesome if our button actually did something.
 
@@ -92,7 +94,7 @@ struct ContentView: View {
     <...>
 ```
 
-We are going to use this to configure what the view displays.
+We are going to use this to configure what is displayed on the screen.
 
 ### 9. Configure the view to display according to the state
 
@@ -145,7 +147,7 @@ If you have done any iOS development before, or even the other CodeBar tutorial,
  
 ## Make the Counter
 
-There are two major tasks to get the make the counter app. The functionality - getting the counter to increment on button clicks and showing the new number. The UI, getting an app that looks nice and is easy to use. This tutorial will create the functionality first and then move on to the UI. You may choose to tackle the tasks in the alternate order. Have a brief discussion with your Coach about the pros and cons of each approach.
+There are two major tasks for making the counter app. Firstly, _the functionality_ - getting the counter to increment on button clicks and showing the new number. Secondly _the UI_, getting an app that looks nice and is easy to use. This tutorial will create the functionality first and then move on to the UI. You may choose to tackle the tasks in the alternate order. Have a brief discussion with your Coach about the pros and cons of each approach.
 
 ### 12. Create the Counter functionality
 
