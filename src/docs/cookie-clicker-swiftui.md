@@ -45,6 +45,8 @@ Take some time to look around the project that's been created with your coach. W
   
 If you are running on Mac OS X Catalina, try running the preview to see what the default project provides.
 
+If this is your first time running Xcode, then this may take a few minutes. This is normal, the next time you run the preview it will be much faster.
+
 ## Add a Button
 
 ### 5. Open up the **Navigation Area** in Xcode, and then the `ContentView.swift` file and its associated Canvas.
@@ -101,7 +103,11 @@ We are going to use this to configure what is displayed on the screen.
 Change the string that is displayed in the `Text` view depending on this state:
 
 ```swift
-Text(showGreeting ? "Hello CodeBar!" : "")
+    if showGreeting {
+        Text("Hello World")
+    } else {
+        Text("")
+    }
 ```
 
 When `showGreeting` is `true` the label will display the greeting, otherwise it will be empty.
@@ -116,19 +122,31 @@ Edit the Button code look like this:
 Button(action: { self.showGreeting.toggle() })
 ```
 
-The `ContentView` struct should now look like this:
+The `ContentView.swift` file should now look like this:
 
 ```swift
+import SwiftUI
+
 struct ContentView: View {
     @State private var showGreeting = false
-    
+
     var body: some View {
         VStack {
-            Text(showGreeting ? "Hello CodeBar!" : "")
-            Button(action: { self.showGreeting.toggle() }) {
+            if showGreeting {
+                Text("Hello World")
+            } else {
+                Text("")
+            }
+            Button(action: {self.showGreeting.toggle()}) {
                 Text("Button")
             }
         }
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
     }
 }
 ```
