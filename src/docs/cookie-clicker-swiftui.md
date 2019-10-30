@@ -327,7 +327,9 @@ It's great to see that Apple makes it easy for us to try our app in our actual h
 
 If you've finished all of the above why not think about some of the following ideas:
 
-* make a new button that decreases the button. Can you turn it into a two player game?
+* Disable the button when the counter reaches, say, 10. so the number can't get larger.
+
+* make a new button that decreases the count. Can you turn it into a two player game?
 
 * make the background change after a set amount of clicks? How about creating an array of colours to change every set interval e.g. after 5 taps.
 
