@@ -1,10 +1,10 @@
 ---
-title: iOS Clicker Worksheet
+title: Cookie Clicker with Storyboards
 ---
 
 This tutorial is an intro to the world of iOS development, and will help you build your first iOS app.
 
-We'll be building a counter app, where the user will press a button and increment the number on the screen.
+We'll be building a cookie clicker app, where the user will tap a cookie and increment the number of times they've tapped.
 
 ## Pre-requisites
 

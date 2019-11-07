@@ -11,6 +11,9 @@
       "cookie-clicker-storyboard": {
         "title": "iOS Clicker Worksheet"
       },
+      "cookie-clicker-swiftui": {
+        "title": "Cookie Clicker with SwiftUI"
+      },
       "intro": {
         "title": "Getting set up for iOS development"
       },

@@ -103,6 +103,12 @@ class Index extends React.Component {
             title: '[Cookie Clicker (Storyboards)](docs/cookie-clicker-storyboard)',
           },
           {
+            content: 'Learn how to build a cookie clicker app using swiftui',
+            image: `${baseUrl}img/cookie.svg`,
+            imageAlign: 'top',
+            title: '[Cookie Clicker (swiftui)](docs/cookie-clicker-swiftui)',
+          },
+          {
             content: 'Some other places to learn iOS development.',
             image: `${baseUrl}img/computer_1.svg`,
             imageAlign: 'top',
