@@ -94,7 +94,7 @@ class Index extends React.Component {
             content: 'How to make your computer ready for making iOS apps.',
             image: `${baseUrl}img/computer_2.svg`,
             imageAlign: 'top',
-            title: '[Getting Set Up](docs/getting-set-up)',
+            title: '[Getting Set Up](docs/intro)',
           },
           {
             content: 'Learn how to build a cookie clicker app using storyboards',
