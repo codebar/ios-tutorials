@@ -1,0 +1,287 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Cookie Clicker with SwiftUI · codebar iOS Tutorials</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="This tutorial is an introduction to the world of iOS development using Apple&#x27;s latest UI framework: [SwiftUI](https://developer.apple.com/xcode/swiftui/)"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Cookie Clicker with SwiftUI · codebar iOS Tutorials"/><meta property="og:type" content="website"/><meta property="og:url" content="https://codebar.github.io/ios-tutorials/"/><meta property="og:description" content="This tutorial is an introduction to the world of iOS development using Apple&#x27;s latest UI framework: [SwiftUI](https://developer.apple.com/xcode/swiftui/)"/><meta property="og:image" content="https://codebar.github.io/ios-tutorials/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://codebar.github.io/ios-tutorials/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/ios-tutorials/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://codebar.github.io/ios-tutorials/blog/atom.xml" title="codebar iOS Tutorials Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://codebar.github.io/ios-tutorials/blog/feed.xml" title="codebar iOS Tutorials Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/ios-tutorials/js/scrollSpy.js"></script><link rel="stylesheet" href="/ios-tutorials/css/main.css"/><script src="/ios-tutorials/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/ios-tutorials/"><img class="logo" src="/ios-tutorials/img/codebar-full-white-logo.png" alt="codebar iOS Tutorials"/><h2 class="headerTitleWithLogo">codebar iOS Tutorials</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/ios-tutorials/docs/intro" target="_self">Getting Started</a></li><li class="siteNavGroupActive"><a href="/ios-tutorials/docs/cookie-clicker-storyboard" target="_self">Swift Tutorials</a></li><li class=""><a href="/ios-tutorials/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>tutorials</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">tutorials</h3><ul class=""><li class="navListItem"><a class="navItem" href="/ios-tutorials/docs/intro">Getting set up for iOS development</a></li><li class="navListItem"><a class="navItem" href="/ios-tutorials/docs/cookie-clicker-storyboard">Cookie Clicker with Storyboards</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/ios-tutorials/docs/cookie-clicker-swiftui">Cookie Clicker with SwiftUI</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle"></h3><ul class=""><li class="navListItem"><a class="navItem" href="/ios-tutorials/docs/other-resources">Other iOS Resources</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Cookie Clicker with SwiftUI</h1></header><article><div><span><p>This tutorial is an introduction to the world of iOS development using Apple's latest UI framework: <a href="https://developer.apple.com/xcode/swiftui/">SwiftUI</a></p>
+<p>We'll be building a counter app, where the user will press a button and increment the number on the screen.</p>
+<h2><a class="anchor" aria-hidden="true" id="pre-requisites"></a><a href="#pre-requisites" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pre-requisites</h2>
+<p>In order to work through this tutorial, you will need a Mac with Xcode 11 installed. Xcode 11 is the minimum version that supports SwiftUI. It is useful to have Mac OSX Catalina installed to see live previews in Xcode, but you can still use Mac OS X Mojave.</p>
+<p>Download and install Xcode from the App Store. This may take a while — its a big program. If you are at a Codebar ask the coaches before downloading it from the App Store as they frequently have a copy on a USB drive which will save some installation time, but it would be better if you come to the workshop with it installed.</p>
+<h2><a class="anchor" aria-hidden="true" id="creating-a-project"></a><a href="#creating-a-project" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating a Project</h2>
+<h3><a class="anchor" aria-hidden="true" id="1-open-xcode-and-click-create-a-new-xcode-project"></a><a href="#1-open-xcode-and-click-create-a-new-xcode-project" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. Open Xcode and click Create a new Xcode project</h3>
+<p><img src="/ios-tutorials/docs/assets/cookie_clicker_swiftui/step1.png" alt="step1"></p>
+<h3><a class="anchor" aria-hidden="true" id="2-select-single-view-application-from-the-ios-application-list-and-click-next"></a><a href="#2-select-single-view-application-from-the-ios-application-list-and-click-next" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. Select Single View Application from the <strong>iOS &gt; Application list</strong>, and click <strong>Next</strong></h3>
+<p><img src="/ios-tutorials/docs/assets/cookie_clicker_swiftui/step2.png" alt="step2"></p>
+<h3><a class="anchor" aria-hidden="true" id="3-fill-in-the-project-details"></a><a href="#3-fill-in-the-project-details" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3. Fill in the project details:</h3>
+<ul>
+<li>Product Name: Clicker</li>
+<li>Team: None</li>
+<li>Organization Name: Whatever you want — your name is always a good fill-in</li>
+<li>Organization Identifier: com.(OrganizationName)</li>
+</ul>
+<p>Make sure Swift is selected as the language.</p>
+<p>Make sure SwiftUI is selected as the User Interface.</p>
+<p>Make sure the three boxes at the bottom are unchecked, we won't be using those options in this tutorial.</p>
+<p>Click Next</p>
+<p><img src="/ios-tutorials/docs/assets/cookie_clicker_swiftui/step3.png" alt="step3"></p>
+<h3><a class="anchor" aria-hidden="true" id="4-select-a-sensible-place-to-save-your-project-then-hit-create"></a><a href="#4-select-a-sensible-place-to-save-your-project-then-hit-create" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4. Select a sensible place to save your project, then hit <strong>Create</strong>.</h3>
+<p>Take some time to look around the project that's been created with your coach. What files are there? How do you run your app?</p>
+<p>If you are running on Mac OS X Catalina, try running the preview to see what the default project provides.</p>
+<p>If this is your first time running Xcode, then this may take a few minutes. This is normal, the next time you run the preview it will be much faster.</p>
+<h2><a class="anchor" aria-hidden="true" id="add-a-button"></a><a href="#add-a-button" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Add a Button</h2>
+<h3><a class="anchor" aria-hidden="true" id="5-open-up-the-navigation-area-in-xcode-and-then-the-contentviewswift-file-and-its-associated-canvas"></a><a href="#5-open-up-the-navigation-area-in-xcode-and-then-the-contentviewswift-file-and-its-associated-canvas" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5. Open up the <strong>Navigation Area</strong> in Xcode, and then the <code>ContentView.swift</code> file and its associated Canvas.</h3>
+<p><img src="/ios-tutorials/docs/assets/cookie_clicker_swiftui/step4.gif" alt="step4"></p>
+<p>If you click on the <code>Resume</code> button in the top right, and you are running on Mac OS X Catalina you will see a preview of the <strong>Hello World</strong> application that the template has provided for you.</p>
+<h3><a class="anchor" aria-hidden="true" id="6-edit-the-canvas-and-add-a-button"></a><a href="#6-edit-the-canvas-and-add-a-button" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6. Edit the Canvas and add a Button</h3>
+<p>When using SwiftUI the Canvas provides a live view of your code. Editing the Canvas will also update your code! We shall be adding code from the Editor a little later on, but for now just add a button to the canvas.</p>
+<ul>
+<li>Open the Library</li>
+<li>Make sure you are browsing the Views</li>
+<li>Search for Button</li>
+<li>Drag the button under the label</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="step5-ios-tutorials-docs-assets-cookie_clicker_swiftui-step5gif"></a><a href="#step5-ios-tutorials-docs-assets-cookie_clicker_swiftui-step5gif" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><img src="/ios-tutorials/docs/assets/cookie_clicker_swiftui/step5.gif" alt="step5"></h3>
+<p>If you look at the Editor, you can see that this has created a <code>VStack</code> with both the label and the button. A <code>VStack</code> is a built in view that arranges the contained views vertically.</p>
+<h3><a class="anchor" aria-hidden="true" id="7-run-the-app-on-the-simulator-or-the-canvas"></a><a href="#7-run-the-app-on-the-simulator-or-the-canvas" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>7. Run the app on the Simulator or the canvas.</h3>
+<p>You can either run the app in the simulator or use the live preview in the Canvas to see the visual effect of pressing the button.</p>
+<p>Celebrate appropriately!</p>
+<p>Try changing the <code>VStack</code> to an <code>HStack</code> Are the results what you expect?</p>
+<p>A <code>HStack</code> is a view that arranges its contained views horizontally.</p>
+<p>However, it would be even more awesome if our button actually did something.</p>
+<h2><a class="anchor" aria-hidden="true" id="make-the-button-do-something"></a><a href="#make-the-button-do-something" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Make the Button do something</h2>
+<p>To do this we are going to need some state in our view.</p>
+<h3><a class="anchor" aria-hidden="true" id="8-create-some-state-for-the-view"></a><a href="#8-create-some-state-for-the-view" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>8. Create some state for the view</h3>
+<p>Create a state variable at the top of the definition of <code>ContentView</code>. We make it <code>private</code> because it is internal to the view, and we give it a default value of <code>false</code> which implicitly makes <code>showGreeting</code> a variable that holds a <code>Bool</code> (Now is the time to ask your Coach questions).</p>
+<pre><code class="hljs css language-swift"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">ContentView</span>: <span class="hljs-title">View</span> </span>{
+    @<span class="hljs-type">State</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> showGreeting = <span class="hljs-literal">false</span>
+    
+    <span class="hljs-keyword">var</span> body: some <span class="hljs-type">View</span> {
+    &lt;...&gt;
+</code></pre>
+<p>We are going to use this to configure what is displayed on the screen.</p>
+<h3><a class="anchor" aria-hidden="true" id="9-configure-the-view-to-display-according-to-the-state"></a><a href="#9-configure-the-view-to-display-according-to-the-state" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>9. Configure the view to display according to the state</h3>
+<p>Change the string that is displayed in the <code>Text</code> view depending on this state:</p>
+<pre><code class="hljs css language-swift">    <span class="hljs-keyword">if</span> showGreeting {
+        <span class="hljs-type">Text</span>(<span class="hljs-string">"Hello World"</span>)
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-type">Text</span>(<span class="hljs-string">""</span>)
+    }
+</code></pre>
+<p>When <code>showGreeting</code> is <code>true</code> the label will display the greeting, otherwise it will be empty.</p>
+<h3><a class="anchor" aria-hidden="true" id="10-use-the-buttons-action-to-change-the-state"></a><a href="#10-use-the-buttons-action-to-change-the-state" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>10. Use the Button's action to change the state</h3>
+<p>When you dragged the button onto the canvas it created an empty <code>action</code> This is a closure, and when the button is tapped it will perform whatever code is written in this closure. We are going to use this to toggle the <code>showGreeting</code> state.</p>
+<p>Edit the Button code look like this:</p>
+<pre><code class="hljs css language-swift"><span class="hljs-type">Button</span>(action: { <span class="hljs-keyword">self</span>.showGreeting.toggle() })
+</code></pre>
+<p>The <code>ContentView.swift</code> file should now look like this:</p>
+<pre><code class="hljs css language-swift"><span class="hljs-keyword">import</span> SwiftUI
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">ContentView</span>: <span class="hljs-title">View</span> </span>{
+    @<span class="hljs-type">State</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> showGreeting = <span class="hljs-literal">false</span>
+
+    <span class="hljs-keyword">var</span> body: some <span class="hljs-type">View</span> {
+        <span class="hljs-type">VStack</span> {
+            <span class="hljs-keyword">if</span> showGreeting {
+                <span class="hljs-type">Text</span>(<span class="hljs-string">"Hello World"</span>)
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-type">Text</span>(<span class="hljs-string">""</span>)
+            }
+            <span class="hljs-type">Button</span>(action: {<span class="hljs-keyword">self</span>.showGreeting.toggle()}) {
+                <span class="hljs-type">Text</span>(<span class="hljs-string">"Button"</span>)
+            }
+        }
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">ContentView_Previews</span>: <span class="hljs-title">PreviewProvider</span> </span>{
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">var</span> previews: some <span class="hljs-type">View</span> {
+        <span class="hljs-type">ContentView</span>()
+    }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="interlude-what-is-state"></a><a href="#interlude-what-is-state" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Interlude: What is @State?</h3>
+<p>SwiftUI is a <em>declarative</em> framework. That means that you write the view to show different things according to its state, and actions change the state, and let the framework handle redrawing the views when these change. If you have done any iOS programming with UIKit before this will be very different. We don't update properties and tell the view to redraw; we just update the properties.</p>
+<p>We can use normal constants and variables in SwiftUI, but when we use <code>@State</code> variables we are telling the framework that these are the values that the view depends on. SwiftUI keeps track of these internally, and when they change the view is redrawn.</p>
+<h3><a class="anchor" aria-hidden="true" id="11-run-the-app-in-the-simulator-or-by-using-the-canvass-live-preview-feature"></a><a href="#11-run-the-app-in-the-simulator-or-by-using-the-canvass-live-preview-feature" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>11. Run the app in the Simulator or by using the Canvas's live preview feature</h3>
+<p>As you tap the button, the greeting appears and disappears!</p>
+<p>/giphy Celebrate</p>
+<p>This is not trivial. You have learned an important part of developing using SwiftUI. You create state, you write your view to respond to the state, and you have actions that change the state. The framework takes care of redrawing the view when the state changes.</p>
+<p>If you have done any iOS development before, or even the other CodeBar tutorial, you can see how little code is needed. There are no <code>ViewController</code>s. There are no <code>Storyboards</code>. You write code and see the results immediately.</p>
+<h2><a class="anchor" aria-hidden="true" id="make-the-counter"></a><a href="#make-the-counter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Make the Counter</h2>
+<p>There are two major tasks for making the counter app. Firstly, <em>the functionality</em> - getting the counter to increment on button clicks and showing the new number. Secondly <em>the UI</em>, getting an app that looks nice and is easy to use. This tutorial will create the functionality first and then move on to the UI. You may choose to tackle the tasks in the alternate order. Have a brief discussion with your Coach about the pros and cons of each approach.</p>
+<h3><a class="anchor" aria-hidden="true" id="12-create-the-counter-functionality"></a><a href="#12-create-the-counter-functionality" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>12. Create the Counter functionality</h3>
+<p>We are a good way towards this, we already have a <code>Button</code> with an action, and a <code>Text</code> view that displays something.</p>
+<p>Change the state variable to hold a number instead of a <code>Bool</code></p>
+<pre><code class="hljs css language-swift">@<span class="hljs-type">State</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> <span class="hljs-built_in">count</span> = <span class="hljs-number">0</span>
+</code></pre>
+<p>Since the state is variable is now a number and not a string, change the <code>Text</code> view to display this:</p>
+<pre><code class="hljs css language-swift"><span class="hljs-type">Text</span>(<span class="hljs-string">"\(count)"</span>)
+</code></pre>
+<p>Finally change the <code>Button</code>'s action to increment this variable</p>
+<pre><code class="hljs css language-swift"><span class="hljs-type">Button</span>(action: { <span class="hljs-keyword">self</span>.<span class="hljs-built_in">count</span> += <span class="hljs-number">1</span> })
+</code></pre>
+<p>The entire file should now look like this</p>
+<pre><code class="hljs css language-swift"><span class="hljs-keyword">import</span> SwiftUI
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">ContentView</span>: <span class="hljs-title">View</span> </span>{
+    @<span class="hljs-type">State</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> <span class="hljs-built_in">count</span> = <span class="hljs-number">0</span>
+
+    <span class="hljs-keyword">var</span> body: some <span class="hljs-type">View</span> {
+        <span class="hljs-type">VStack</span> {
+            <span class="hljs-type">Text</span>(<span class="hljs-string">"\(count)"</span>)
+            <span class="hljs-type">Button</span>(action: { <span class="hljs-keyword">self</span>.<span class="hljs-built_in">count</span> += <span class="hljs-number">1</span> }) {
+                <span class="hljs-type">Text</span>(<span class="hljs-string">"Button"</span>)
+            }
+        }
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">ContentView_Previews</span>: <span class="hljs-title">PreviewProvider</span> </span>{
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">var</span> previews: some <span class="hljs-type">View</span> {
+        <span class="hljs-type">ContentView</span>()
+    }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="13-run-the-app-in-the-simulator-on-the-canvas-live-preview-to-see-the-counter-working"></a><a href="#13-run-the-app-in-the-simulator-on-the-canvas-live-preview-to-see-the-counter-working" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>13. Run the app in the Simulator on the Canvas live preview to see the counter working</h3>
+<p><img src="/ios-tutorials/docs/assets/cookie_clicker_swiftui/step6.gif" alt="step6"></p>
+<h2><a class="anchor" aria-hidden="true" id="make-it-look-better"></a><a href="#make-it-look-better" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Make it look better</h2>
+<p>Having the button and the label so close together isn't the nicest looking UI. Nor is it the easiest to use. And the text for the counter seems a little small. Let's fix these things</p>
+<h3><a class="anchor" aria-hidden="true" id="14-increase-the-size-of-the-numbers"></a><a href="#14-increase-the-size-of-the-numbers" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>14. Increase the size of the numbers</h3>
+<p>In the canvas Cmd + Click on the <code>Text</code> view, this brings up an inspector.</p>
+<p>Select the <code>show SwiftUI Inspector...</code> option.</p>
+<p>Choose <code>Large Title</code> for the font.</p>
+<p><img src="/ios-tutorials/docs/assets/cookie_clicker_swiftui/step7.gif" alt="step7"></p>
+<p>Notice that in the editor, the modifier has been added to the <code>Text</code> view that matches this choice.</p>
+<p>Working with your coach, try to apply other sizes and styles to this <code>Text</code> view.</p>
+<h3><a class="anchor" aria-hidden="true" id="15-add-some-spacing"></a><a href="#15-add-some-spacing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>15. Add some spacing</h3>
+<p>Let's add some separation between the elements. <code>VStack</code>s are quite helpful in laying items out. All that needs to be done is for some spacers to be added between the elements and the it will handle layout.</p>
+<p>Add a <code>Spacer()</code> above and below the <code>Text</code> view. The entire file should now look like this:</p>
+<pre><code class="hljs css language-swift"><span class="hljs-keyword">import</span> SwiftUI
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">ContentView</span>: <span class="hljs-title">View</span> </span>{
+    @<span class="hljs-type">State</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> <span class="hljs-built_in">count</span> = <span class="hljs-number">0</span>
+
+    <span class="hljs-keyword">var</span> body: some <span class="hljs-type">View</span> {
+        <span class="hljs-type">VStack</span> {
+            <span class="hljs-type">Spacer</span>()
+            <span class="hljs-type">Text</span>(<span class="hljs-string">"\(count)"</span>)
+                .font(.largeTitle)
+            <span class="hljs-type">Spacer</span>()
+            <span class="hljs-type">Button</span>(action: { <span class="hljs-keyword">self</span>.<span class="hljs-built_in">count</span> += <span class="hljs-number">1</span> }) {
+                <span class="hljs-type">Text</span>(<span class="hljs-string">"Button"</span>)
+            }
+        }
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">ContentView_Previews</span>: <span class="hljs-title">PreviewProvider</span> </span>{
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">var</span> previews: some <span class="hljs-type">View</span> {
+        <span class="hljs-type">ContentView</span>()
+    }
+}
+</code></pre>
+<p>And the Canvas shows the result:</p>
+<p><img src="/ios-tutorials/docs/assets/cookie_clicker_swiftui/step8.png" alt="step8"></p>
+<h2><a class="anchor" aria-hidden="true" id="summary"></a><a href="#summary" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Summary</h2>
+<p>Congratulations! You've just created your first SwiftUI iOS app. You've learned how to move around Xcode and edit your code. You've added UI elements from the library and configured them. You've seen how to use previews, live previews, and the simulator. You've seen how SwiftUI is declarative. This is a good start!</p>
+<h2><a class="anchor" aria-hidden="true" id="bonus-run-your-app-on-your-apple-device"></a><a href="#bonus-run-your-app-on-your-apple-device" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bonus : Run your app on your Apple device</h2>
+<p>Running your app in the simulator is cool, but you know what's even cooler? Running your app in your Apple devices! Couple years back, you need to have a developer account to run your app in a physical device, but luckily know Apple allows us to run our app using your everyday Apple account.</p>
+<h3><a class="anchor" aria-hidden="true" id="pre-requisites-1"></a><a href="#pre-requisites-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pre-requisites</h3>
+<ul>
+<li>📱 Apple device (the more recent device the better) + cable</li>
+<li>An Apple account</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="a-add-your-account-in-xcode"></a><a href="#a-add-your-account-in-xcode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>A. Add your account in Xcode</h3>
+<ul>
+<li>From the menubar, go to <code>Xcode &gt; Preferences...</code></li>
+<li>Click the <code>Accounts</code> tab (the second tab)</li>
+<li>On bottom left, press the + icon</li>
+<li>Select <code>Add Apple ID...</code></li>
+<li>Insert your Apple ID's credentials</li>
+</ul>
+<p><img src="/ios-tutorials/docs/assets/cookie_clicker_storyboard/bonus_step1.png" alt="add_apple_id"></p>
+<h3><a class="anchor" aria-hidden="true" id="b-configure-your-projects-signing"></a><a href="#b-configure-your-projects-signing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>B. Configure your project's signing</h3>
+<ul>
+<li>Go to <code>Navigator</code> area, select <code>Project navigator</code> tab, select your project name</li>
+<li>Select your app target in the <code>Targets</code> tab</li>
+<li>In the <code>Signing</code> area, select your account as the team name</li>
+</ul>
+<p><img src="/ios-tutorials/docs/assets/cookie_clicker_storyboard/bonus_step2.png" alt="select_team" title="Select team"></p>
+<h3><a class="anchor" aria-hidden="true" id="c-configure-your-device"></a><a href="#c-configure-your-device" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>C. Configure your device 📱</h3>
+<ul>
+<li>Plug your Apple device to your development machine (this will trigger Xcode to <a href="http://stackoverflow.com/a/19706886/851515">processes symbol files from your devices</a>, which will take a sometime)</li>
+<li>Instead of running on simulator, select your device instead
+<img src="/ios-tutorials/docs/assets/cookie_clicker_storyboard/bonus_step3a.png" alt="select device" title="Select your apple device"></li>
+<li>Press the play button to run the app!</li>
+<li>Errm... not so fast. We need to allow codesign to access our keychain, press <code>Always Allow</code>
+<img src="/ios-tutorials/docs/assets/cookie_clicker_storyboard/bonus_step3b.png" alt="allow keychain" title="Allow codesign to access keychain"></li>
+<li>Almost there, you will be prompted to verify your account in your device
+<img src="/ios-tutorials/docs/assets/cookie_clicker_storyboard/bonus_step3c.png" alt="verify alert" title="Verify account developer"></li>
+<li>Now on your iOS device, go to <code>Settings</code> &gt; <code>General</code> &gt; <code>Profiles &amp; Device Management</code>, tap your account under <code>Developer App</code>, tap <code>Trust '&lt;your apple account email&gt;'</code>, and confirm by tapping <code>Trust</code> again
+<img src="/ios-tutorials/docs/assets/cookie_clicker_storyboard/bonus_step3d.png" alt="verify account" title="Verify account in your device"></li>
+<li>Back at Xcode, press play button to build and run again</li>
+<li>🎉</li>
+</ul>
+<p>It's great to see that Apple makes it easy for us to try our app in our actual hands. Happy testing!</p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="extension-tasks"></a><a href="#extension-tasks" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Extension Tasks</h2>
+<p>If you've finished all of the above why not think about some of the following ideas:</p>
+<ul>
+<li><p>Disable the button when the counter reaches, say, 10. so the number can't get larger.</p></li>
+<li><p>make a new button that decreases the count. Can you turn it into a two player game?</p></li>
+<li><p>make the background change after a set amount of clicks? How about creating an array of colours to change every set interval e.g. after 5 taps.</p></li>
+<li><p>change your button into a picture button, you could make a cookie clicker? Make the picture change after a set amount of clicks.</p></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/ios-tutorials/docs/cookie-clicker-storyboard"><span class="arrow-prev">← </span><span>Cookie Clicker with Storyboards</span></a><a class="docs-next button" href="/ios-tutorials/docs/other-resources"><span class="function-name-prevnext">Other iOS Resources</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#pre-requisites">Pre-requisites</a></li><li><a href="#creating-a-project">Creating a Project</a><ul class="toc-headings"><li><a href="#1-open-xcode-and-click-create-a-new-xcode-project">1. Open Xcode and click Create a new Xcode project</a></li><li><a href="#2-select-single-view-application-from-the-ios-gt-application-list-and-click-next">2. Select Single View Application from the <strong>iOS &gt; Application list</strong>, and click <strong>Next</strong></a></li><li><a href="#3-fill-in-the-project-details">3. Fill in the project details:</a></li><li><a href="#4-select-a-sensible-place-to-save-your-project-then-hit-create">4. Select a sensible place to save your project, then hit <strong>Create</strong>.</a></li></ul></li><li><a href="#add-a-button">Add a Button</a><ul class="toc-headings"><li><a href="#5-open-up-the-navigation-area-in-xcode-and-then-the-contentviewswift-file-and-its-associated-canvas">5. Open up the <strong>Navigation Area</strong> in Xcode, and then the <code>ContentView.swift</code> file and its associated Canvas.</a></li><li><a href="#6-edit-the-canvas-and-add-a-button">6. Edit the Canvas and add a Button</a></li><li><a href="#"><img src="/ios-tutorials/docs/assets/cookie_clicker_swiftui/step5.gif" alt="step5"></a></li><li><a href="#7-run-the-app-on-the-simulator-or-the-canvas">7. Run the app on the Simulator or the canvas.</a></li></ul></li><li><a href="#make-the-button-do-something">Make the Button do something</a><ul class="toc-headings"><li><a href="#8-create-some-state-for-the-view">8. Create some state for the view</a></li><li><a href="#9-configure-the-view-to-display-according-to-the-state">9. Configure the view to display according to the state</a></li><li><a href="#10-use-the-buttons-action-to-change-the-state">10. Use the Button's action to change the state</a></li><li><a href="#interlude-what-is-state">Interlude: What is @State?</a></li><li><a href="#11-run-the-app-in-the-simulator-or-by-using-the-canvass-live-preview-feature">11. Run the app in the Simulator or by using the Canvas's live preview feature</a></li></ul></li><li><a href="#make-the-counter">Make the Counter</a><ul class="toc-headings"><li><a href="#12-create-the-counter-functionality">12. Create the Counter functionality</a></li><li><a href="#13-run-the-app-in-the-simulator-on-the-canvas-live-preview-to-see-the-counter-working">13. Run the app in the Simulator on the Canvas live preview to see the counter working</a></li></ul></li><li><a href="#make-it-look-better">Make it look better</a><ul class="toc-headings"><li><a href="#14-increase-the-size-of-the-numbers">14. Increase the size of the numbers</a></li><li><a href="#15-add-some-spacing">15. Add some spacing</a></li></ul></li><li><a href="#summary">Summary</a></li><li><a href="#bonus-run-your-app-on-your-apple-device">Bonus : Run your app on your Apple device</a><ul class="toc-headings"><li><a href="#pre-requisites-1">Pre-requisites</a></li><li><a href="#a-add-your-account-in-xcode">A. Add your account in Xcode</a></li><li><a href="#b-configure-your-projects-signing">B. Configure your project's signing</a></li><li><a href="#c-configure-your-device">C. Configure your device 📱</a></li></ul></li><li><a href="#extension-tasks">Extension Tasks</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/ios-tutorials/docs/en/attributions.html">Attributions</a></section><a href="https://codebar.io/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/ios-tutorials/img/codebar-full-white-logo.png" alt="Facebook Open Source"/></a></footer></div></body></html>
