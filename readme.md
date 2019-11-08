@@ -2,6 +2,8 @@
 
 This is a repo dedicated to the iOS codebar Workshop. These materials can be used during a normal codebar workshop as long as a coach is there with the skill set.
 
+These tutorials are hosted at [https://codebar.github.io/ios-tutorials/](https://codebar.github.io/ios-tutorials/)
+
 ## Building the tutorials
 
 We are now using [docusaurus](https://docusaurus.io) to build our tutorials. You will need npm installed on your computer to get started.
