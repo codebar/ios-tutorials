@@ -2,7 +2,7 @@
 
 This is a repo dedicated to the iOS codebar Workshop. These materials can be used during a normal codebar workshop as long as a coach is there with the skill set.
 
-These tutorials are hosted at https://codebar.github.io/ios-tutorials/
+These tutorials are hosted at [https://codebar.github.io/ios-tutorials/](https://codebar.github.io/ios-tutorials/)
 
 ## Building the tutorials
 
