@@ -28,8 +28,8 @@ Download and install Xcode from the App Store. This may take a while — its
   * Team: None
   * Organization Name: Whatever you want — your name is always a good fill-in
   * Organization Identifier: com.(OrganizationName)
-
-  Make sure Swift is selected as the language, and Devices is set to Universal.
+  * Language: Swift
+  * User interface: Storyboard
 
   Untick the 3 boxes at the bottom.
 
@@ -49,11 +49,15 @@ Download and install Xcode from the App Store. This may take a while — its
 
   ![step4](assets/cookie_clicker_storyboard/step4.gif)
 
-### 2. Now, click on the **Object Library** next to the **Standard Editor**. In the search box, find a button, and drag it to the bottom of the view shown in the storyboard.
+### 2. Now, click on the **Object Library** next to the **Standard Editor**. In the search box, find Button, and drag it to the bottom of the view shown in the storyboard.
 
-  ![step5](assets/cookie_clicker_storyboard/object-Library.png)
+  ![You can open the object library by clicking the plus button towards the top right of the Xcode window](assets/cookie_clicker_storyboard/object-library.png)
 
-### 3. Run your app on the iPhone 7 Plus Simulator. See your button, there in all its glory at the bottom of the screen. Go ahead - press it!
+### 3. Run your app on a Simulator. 
+
+  ![The run button is in the top left of the screen](assets/cookie_clicker_storyboard/run-button.png)
+
+  This might take a minute or so to complete, so be patient! But eventually your button should be there in all its glory at the bottom of the screen. Go ahead - press it!
 
   Celebrate appropriately.
 
@@ -113,7 +117,7 @@ Download and install Xcode from the App Store. This may take a while — its
   }
   ```
 
-### 9. Run your app in the iPhone 7 Plus simulator again, and tap on the button.
+### 9. Run your app in the simulator again, and tap on the button.
 
   ![step8](assets/cookie_clicker_storyboard/step8.gif)
 
@@ -152,17 +156,17 @@ Download and install Xcode from the App Store. This may take a while — its
   Your `ViewController` should now look like this:
 
   ```swift
-    import UIKit
+  import UIKit
 
-    class ViewController: UIViewController {
+  class ViewController: UIViewController {
 
-      @IBOutlet weak var counterLabel: UILabel!
+    @IBOutlet weak var counterLabel: UILabel!
 
-      @IBAction func buttonTapped(_ sender: Any) {
-        print("Hello, world")
-      }
-
+    @IBAction func buttonTapped(_ sender: Any) {
+      print("Hello, world")
     }
+
+  }
   ```
 
 ### 14. Next we want to get actions on our button changing the appearance of our label.
