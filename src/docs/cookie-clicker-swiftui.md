@@ -4,13 +4,13 @@ title: Cookie Clicker with SwiftUI
 
 This tutorial is an introduction to the world of iOS development using Apple's latest UI framework: [SwiftUI](https://developer.apple.com/xcode/swiftui/)
 
-We'll be building a counter app, where the user will press a button and increment the number on the screen.
+We'll be building a counter app, where the user will press a button and increment a number on the screen.
 
 ## Pre-requisites
 
-In order to work through this tutorial, you will need a Mac with Xcode 11 installed. Xcode 11 is the minimum version that supports SwiftUI. It is useful to have Mac OSX Catalina installed to see live previews in Xcode, but you can still use Mac OS X Mojave.
+In order to work through this tutorial, you will need a Mac with Xcode 12 installed.
 
-Download and install Xcode from the App Store. This may take a while — its a big program. If you are at a Codebar ask the coaches before downloading it from the App Store as they frequently have a copy on a USB drive which will save some installation time, but it would be better if you come to the workshop with it installed.
+Download and install Xcode from the App Store. This may take a while because of it's size. If you are at a Codebar event ask the coaches before downloading it from the App Store as they frequently have a copy on a USB drive which will save some installation time, but it would be better if you come to the workshop with it installed.
 
 ## Creating a Project
 
@@ -26,14 +26,15 @@ Download and install Xcode from the App Store. This may take a while — its
 
 - Product Name: Clicker
 - Team: None
-- Organization Name: Whatever you want — your name is always a good fill-in
-- Organization Identifier: com.(OrganizationName)
+- Organization Identifier: com.<your-name>
 
-Make sure Swift is selected as the language.
-  
-Make sure SwiftUI is selected as the User Interface.
+Make sure that SwiftUI is selected as the Interface.
 
-Make sure the three boxes at the bottom are unchecked, we won't be using those options in this tutorial.
+Make sure that SwiftUI App is selected as the Life Cycle.
+
+Make sure that Swift is selected as the Language.
+
+Make sure the remaining boxes are unchecked. We aren't going to be using Core Data in this project. Just because we aren't including tests at this stage doesn't mean that testing is not important in developing iOS apps. Just that we aren't going two be covering them in this first tutorial, and adding tests later is easily done.
 
 Click Next
 
@@ -43,7 +44,7 @@ Click Next
 
 Take some time to look around the project that's been created with your coach. What files are there? How do you run your app?
   
-If you are running on Mac OS X Catalina, try running the preview to see what the default project provides.
+If you are running on Mac OS Big Sur or Catalina, try running the project on the iOS simulator to see what the default project provides.
 
 If this is your first time running Xcode, then this may take a few minutes. This is normal, the next time you run the preview it will be much faster.
 
@@ -53,7 +54,7 @@ If this is your first time running Xcode, then this may take a few minutes. This
 
 ![step4](assets/cookie_clicker_swiftui/step4.gif)
   
-If you click on the `Resume` button in the top right, and you are running on Mac OS X Catalina you will see a preview of the **Hello World** application that the template has provided for you.
+If you click on the `Resume` button in the top right, and you are running on Mac OS X Big Sur or Catalina you will see a preview of the **Hello World** application that the template has provided for you.
   
 ### 6. Edit the Canvas and add a Button
 
@@ -66,7 +67,7 @@ When using SwiftUI the Canvas provides a live view of your code. Editing the Can
 
 ### ![step5](assets/cookie_clicker_swiftui/step5.gif)
 
-If you look at the Editor, you can see that this has created a `VStack` with both the label and the button. A `VStack` is a built in view that arranges the contained views vertically.
+If you look at the editor, you can see that this has created a `VStack` with both the label and the button. A `VStack` is a built in view that arranges the contained views vertically.
 
 ### 7. Run the app on the Simulator or the canvas.
 
@@ -105,8 +106,10 @@ Change the string that is displayed in the `Text` view depending on this state:
 ```swift
     if showGreeting {
         Text("Hello World")
+            .padding()
     } else {
         Text("")
+            .padding()
     }
 ```
 
@@ -134,8 +137,10 @@ struct ContentView: View {
         VStack {
             if showGreeting {
                 Text("Hello World")
+                    .padding()
             } else {
                 Text("")
+                    .padding()
             }
             Button(action: {self.showGreeting.toggle()}) {
                 Text("Button")
@@ -165,7 +170,7 @@ As you tap the button, the greeting appears and disappears!
 /giphy Celebrate
 
 
-This is not trivial. You have learned an important part of developing using SwiftUI. You create state, you write your view to respond to the state, and you have actions that change the state. The framework takes care of redrawing the view when the state changes.
+This is not trivial example. You have learned an important part of developing using SwiftUI. You create state, you write your view to respond to the state, and you have actions that change the state. The framework takes care of redrawing the view when the state changes.
 
 If you have done any iOS development before, or even the other CodeBar tutorial, you can see how little code is needed. There are no `ViewController`s. There are no `Storyboards`. You write code and see the results immediately.
 
@@ -207,6 +212,8 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Text("\(count)")
+                .padding()
+                
             Button(action: { self.count += 1 }) {
                 Text("Button")
             }
@@ -221,7 +228,7 @@ struct ContentView_Previews: PreviewProvider {
 }
 ```
 
-### 13. Run the app in the Simulator on the Canvas live preview to see the counter working
+### 13. Run the app in the Canvas live preview or the simulator to see this working
 
 ![step6](assets/cookie_clicker_swiftui/step6.gif)
 
@@ -284,6 +291,23 @@ And the Canvas shows the result:
 
 Congratulations! You've just created your first SwiftUI iOS app. You've learned how to move around Xcode and edit your code. You've added UI elements from the library and configured them. You've seen how to use previews, live previews, and the simulator. You've seen how SwiftUI is declarative. This is a good start!
 
+------
+
+## Extension Tasks
+
+If you've finished all of the above why not think about some of the following ideas:
+
+* Disable the button when the counter reaches, say, 10. so the number can't get larger.
+
+* make a new button that decreases the count. Can you turn it into a two player game?
+
+* make the background change after a set amount of clicks? How about creating an array of colours to change every set interval e.g. after 5 taps.
+
+* change your button into a picture button, you could make a cookie clicker? Make the picture change after a set amount of clicks.
+
+
+-----
+
 ## Bonus : Run your app on your Apple device
 
 Running your app in the simulator is cool, but you know what's even cooler? Running your app in your Apple devices! Couple years back, you need to have a developer account to run your app in a physical device, but luckily know Apple allows us to run our app using your everyday Apple account.
@@ -328,16 +352,3 @@ Running your app in the simulator is cool, but you know what's even cooler? Runn
 
 It's great to see that Apple makes it easy for us to try our app in our actual hands. Happy testing!
 
-------
-
-## Extension Tasks
-
-If you've finished all of the above why not think about some of the following ideas:
-
-* Disable the button when the counter reaches, say, 10. so the number can't get larger.
-
-* make a new button that decreases the count. Can you turn it into a two player game?
-
-* make the background change after a set amount of clicks? How about creating an array of colours to change every set interval e.g. after 5 taps.
-
-* change your button into a picture button, you could make a cookie clicker? Make the picture change after a set amount of clicks.
