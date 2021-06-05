@@ -4,13 +4,13 @@ title: Cookie Clicker with SwiftUI
 
 This tutorial is an introduction to the world of iOS development using Apple's latest UI framework: [SwiftUI](https://developer.apple.com/xcode/swiftui/)
 
-We'll be building a counter app, where the user will press a button and increment the number on the screen.
+We'll be building a counter app, where the user will press a button and increment a number on the screen.
 
 ## Pre-requisites
 
-In order to work through this tutorial, you will need a Mac with Xcode 11 installed. Xcode 11 is the minimum version that supports SwiftUI. It is useful to have Mac OSX Catalina installed to see live previews in Xcode, but you can still use Mac OS X Mojave.
+In order to work through this tutorial, you will need a Mac with Xcode 12 installed.
 
-Download and install Xcode from the App Store. This may take a while — its a big program. If you are at a Codebar ask the coaches before downloading it from the App Store as they frequently have a copy on a USB drive which will save some installation time, but it would be better if you come to the workshop with it installed.
+Download and install Xcode from the App Store. This may take a while because of it's size. If you are at a Codebar event ask the coaches before downloading it from the App Store as they frequently have a copy on a USB drive which will save some installation time, but it would be better if you come to the workshop with it installed.
 
 ## Creating a Project
 
@@ -26,14 +26,15 @@ Download and install Xcode from the App Store. This may take a while — its
 
 - Product Name: Clicker
 - Team: None
-- Organization Name: Whatever you want — your name is always a good fill-in
-- Organization Identifier: com.(OrganizationName)
+- Organization Identifier: com.<your-name>
 
-Make sure Swift is selected as the language.
-  
-Make sure SwiftUI is selected as the User Interface.
+Make sure that SwiftUI is selected as the Interface.
 
-Make sure the three boxes at the bottom are unchecked, we won't be using those options in this tutorial.
+Make sure that SwiftUI App is selected as the Life Cycle.
+
+Make sure that Swift is selected as the Language.
+
+Make sure the remaining boxes are unchecked. We aren't going to be using Core Data in this project. Just because we aren't including tests at this stage doesn't mean that testing is not important in developing iOS apps. Just that we aren't going two be covering them in this first tutorial, and adding tests later is easily done.
 
 Click Next
 
@@ -43,7 +44,7 @@ Click Next
 
 Take some time to look around the project that's been created with your coach. What files are there? How do you run your app?
   
-If you are running on Mac OS X Catalina, try running the preview to see what the default project provides.
+If you are running on Mac OS Big Sur or Catalina, try running the project on the iOS simulator to see what the default project provides.
 
 If this is your first time running Xcode, then this may take a few minutes. This is normal, the next time you run the preview it will be much faster.
 
