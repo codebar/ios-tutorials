@@ -54,7 +54,7 @@ If this is your first time running Xcode, then this may take a few minutes. This
 
 ![step4](assets/cookie_clicker_swiftui/step4.gif)
   
-If you click on the `Resume` button in the top right, and you are running on Mac OS X Catalina you will see a preview of the **Hello World** application that the template has provided for you.
+If you click on the `Resume` button in the top right, and you are running on Mac OS X Big Sur or Cataline you will see a preview of the **Hello World** application that the template has provided for you.
   
 ### 6. Edit the Canvas and add a Button
 
